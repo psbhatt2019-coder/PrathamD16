@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pratham Bhatt | Premium Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">PB</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Expertise</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <!-- Hamburger -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content fade-in">
+            <h1>Pratham Bhatt</h1>
+            <h2>Strategic Thinker • Quiet Builder • Future Architect</h2>
+            <p>
+                Engineering opportunities through analytical precision,
+                disciplined execution, and relentless optimization.
+            </p>
+            <a href="#about" class="btn">Discover More</a>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section glass fade-up">
+        <h2>About Me</h2>
+        <p>
+            I operate at the intersection of structured curiosity and deliberate action.
+            My mindset revolves around building systems, refining strategy, and creating
+            long-term value through clarity and precision.
+        </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section fade-up">
+        <h2>Core Expertise</h2>
+        <div class="cards">
+            <div class="card">Analytical Intelligence</div>
+            <div class="card">Strategic Planning</div>
+            <div class="card">System Optimization</div>
+            <div class="card">High-Impact Execution</div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section glass fade-up">
+        <h2>Let’s Connect</h2>
+        <p>Email: pratham@example.com</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Pratham Bhatt — Crafted with Precision</p>
+    </footer>
+
+<script>
+    // Hamburger Toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+
+    hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        hamburger.classList.toggle('toggle');
+    });
+
+    // Scroll Animation
+    const faders = document.querySelectorAll('.fade-up');
+
+    const appearOptions = {
+        threshold: 0.3
+    };
+
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('appear');
+            observer.unobserve(entry.target);
+        });
+    }, appearOptions);
+
+    faders.forEach(fader => {
+        appearOnScroll.observe(fader);
+    });
+</script>
+
+</body>
+</html>
